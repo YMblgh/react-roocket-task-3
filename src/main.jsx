@@ -8,8 +8,8 @@ import { store } from './store'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
-  <Provider store={ store } >
+  {/* <Provider store={ store } > */}
     <RouterProvider router={ routes } />
-  </Provider>
+  {/* </Provider> */}
   </>
 )
