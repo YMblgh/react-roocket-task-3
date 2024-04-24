@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import Dashboard from "../../routes/pages/Dashboard"
-import routes, { routesArray } from "../../routes";
+import routes from "../../routes";
 import { getItem } from "localforage";
 import { useEffect } from "react";
 import { useSelector } from 'react-redux'
@@ -10,7 +10,7 @@ let navigation
 
 export default ({ className }) => {
 
-    navigation = routesArray[0].children
+    navigation = routes[0].children
     // console.log(navigation);
 
     const showSideBar = useSelector(state => state.sidebar.show)

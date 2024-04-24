@@ -5,7 +5,7 @@ import Root from "./Root"
 
 
 
-const routesArray = [
+const routes = [
     {
         path : "/",
         element : <Root />,
@@ -26,7 +26,7 @@ const routesArray = [
     },
 ]
 
-const routes = createBrowserRouter(routesArray)
+// const routes = createBrowserRouter(routes)
 
-export { routesArray }
+// export { routes as routesArray }
 export default routes

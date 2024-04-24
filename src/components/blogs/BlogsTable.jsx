@@ -1,6 +1,6 @@
 import BlogItemRow from "./BlogItemRow"
 
-export default () => {
+export default ({ children }) => {
     return (
         <table className="table-auto border border-slate-500 w-full mt-6">
                 <thead>
@@ -11,11 +11,7 @@ export default () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <BlogItemRow />
-                    <BlogItemRow />
-                    <BlogItemRow />
-                    <BlogItemRow />
-                    <BlogItemRow />
+                    { children }
                 </tbody>
             </table>
     )
