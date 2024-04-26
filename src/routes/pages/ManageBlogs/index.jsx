@@ -14,16 +14,33 @@ export default () => {
 
     const blogs = useSelector(state => state.blogs)
 
-    const newBlogBtn = () => {
-      useModal(dispatcher)
+    const newBlogBtn = async () => {
+
+        const addPost = async (postName) => {
+            let data = {
+                name : postName,
+                createdAt : new Date().toLocaleString(),
+            }
+            const post = await useUpdateBlogs({ method : "post" , data })
+            return post
+        }
+
+        const modal = {
+            title: "نام مقاله را وارد کنید",
+            input: "text",
+            showCancelButton: true,
+            cancelButtonText: "لفو",
+            confirmButtonText: "تائید",
+            showLoaderOnConfirm : true,
+            preConfirm : addPost,
+        }
+
+        const confirmedPost = await useModal(modal)
+
+        if (confirmedPost) {
+            dispatcher(add([confirmedPost]))
+        }
     }
-
-    // if (blogs.length == 0) {
-    //     useUpdateBlogs({})
-    // }
-    // const blogs = useUpdateBlogs({ method : "get" })
-    
-
 
     return (
         <div className="px-20 py-20 border-4 rounded-lg" dir="rtl" >

@@ -27,7 +27,7 @@ export default () => {
                 {/* <Provider store={ store } > */}
                     <Header />
                     <div className="relative flex" dir="rtl">
-                        <SideBar className="basis-1/6 pt-28 " />
+                        <SideBar className="basis-4/12 xl:basis-3/12 pt-28 " />
                         <div className="bg-stone-100 w-full min-h-screen">
                             <div className="mt-20">
                                 <Outlet />
