@@ -12,7 +12,9 @@ const swal = withReactContent(Swal)
 export default async (swalObj = { title : "no title" }) => {
 
     const modal = swal.mixin(swalObj)
-    const { value } = await modal.fire()
+    const { value } = await modal.fire({
+        // icon: "question"
+    })
     
     console.log(value);
     return value

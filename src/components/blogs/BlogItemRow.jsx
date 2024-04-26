@@ -54,6 +54,7 @@ export default ({ item }) => {
             cancelButtonText: "لفو",
             confirmButtonText: "تائید",
             showLoaderOnConfirm : true,
+            icon: "error",
             preConfirm : editPost,
         }
 

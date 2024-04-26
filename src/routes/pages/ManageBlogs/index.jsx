@@ -32,6 +32,7 @@ export default () => {
             cancelButtonText: "لفو",
             confirmButtonText: "تائید",
             showLoaderOnConfirm : true,
+            icon: "question",
             preConfirm : addPost,
         }
 
