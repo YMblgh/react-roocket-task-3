@@ -16,6 +16,7 @@
     "axios": "^1.6.8",
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.8.0",
+    "formik": "^2.4.6",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.2.0",
