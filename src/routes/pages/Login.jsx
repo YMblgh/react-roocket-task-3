@@ -8,8 +8,8 @@ export default () => {
 
     const formik = useFormik({
         initialValues : {
-            email : '1999mym@gmail.com',
-            password : '12345678'
+            email : '',
+            password : ''
         },
         validate : (values) => {
             let errors = {}

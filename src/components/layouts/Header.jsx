@@ -1,14 +1,15 @@
-import { Fragment } from 'react'
+import { Fragment, useContext } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon, ArrowRightEndOnRectangleIcon, ArrowLeftEndOnRectangleIcon } from '@heroicons/react/24/outline'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggle } from '../../store/slices/sidebar'
+import AuthContext from '../../contexts/AuthContext'
 
 
 export default function Header() {
       
   const showSidebar = useSelector(state => state.sidebar.show)
-
+  const user = useContext(AuthContext)
   const dispatcher = useDispatch()
 
   const handleClick = () => {
