@@ -2,6 +2,7 @@ import axios from "axios"
 import { useFormik } from "formik"
 import { useEffect, useState } from "react"
 import { Navigate, redirect, useNavigate } from "react-router-dom"
+import useModal from "../../hooks/useModal"
 
 export default () => {
     const navigate = useNavigate()
@@ -25,7 +26,8 @@ export default () => {
         },
         onSubmit : async (values) => {
             console.log("values:", values);
-            await axios.post("https://react-camp-api.roocket.ir/api/admin/login", values).then((res) => {
+            await axios.post("https://react-camp-api.roocket.ir/api/admin/login", values)
+            .then(res => {
                 localStorage.setItem("user", JSON.stringify(res.data))
                 // setUserData(res.data)
                 console.log("user received from api");
@@ -33,8 +35,22 @@ export default () => {
                 // setlogin(true)
                 navigate("/")
             }).catch(reason => {
-                console.log(reason.message)
-                // useModal()
+                console.log(reason)
+
+                const modal = {
+                    title : reason.message,
+                    text : reason.response.data.message,
+                    toast : true,
+                    position : "top-right",
+                    timerProgressBar : true,
+                    timer : 3000,
+                    showConfirmButton : false,
+                    customClass : {
+                        popup : "text-right"
+                    }
+                }
+
+                useModal(modal)
             });
         }
     })

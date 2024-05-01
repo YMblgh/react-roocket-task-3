@@ -17,7 +17,7 @@ export default ({ className }) => {
     const showSideBar = useSelector(state => state.sidebar.show)
 
     return (
-        <div className={`bg-slate-700 fixed top-0 bottom-0 right-0 pt-10 px-5 md:static ${!showSideBar ? 'hidden' : ''} ${className}`}>
+        <div className={`bg-slate-700 fixed top-0 bottom-0 right-0 pt-10 px-5 md:static min-w-72 ${!showSideBar ? 'hidden' : ''} ${className}`}>
             <div className="">
                 {
                     navigation.map((item) => {

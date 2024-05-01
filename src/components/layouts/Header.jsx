@@ -31,6 +31,7 @@ export default function Header() {
                     <ArrowLeftEndOnRectangleIcon className="block h-6 w-6" aria-hidden="true" />
                   )}
                 </button>
+                <p className="text-slate-200">{ user?.name }</p>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch ">
                 <div className="flex flex-shrink-0 items-center">

@@ -13,8 +13,8 @@ import Panel from "./Panel"
 
 export default () => {
 
-    const user = useContext(AuthContext)
-    const location = useLocation()
+    // const user = useContext(AuthContext)
+    // const location = useLocation()
     
     return (
         <Panel />
